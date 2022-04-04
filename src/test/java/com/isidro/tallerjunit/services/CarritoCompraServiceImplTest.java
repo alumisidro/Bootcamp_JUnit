@@ -159,10 +159,6 @@ public class CarritoCompraServiceImplTest {
 		assertEquals("Art1", carritoService.getArticulos().get(0).getNombre());
 		assertEquals(Double.valueOf(5.99), carritoService.getArticulos().get(0).getPrecio());
 
-		// Comprobar que el nombre y precio del artículo coincide con el del test
-		assertEquals("Art1", carritoService.getArticulos().get(0).getNombre());
-		assertEquals(Double.valueOf(5.99), carritoService.getArticulos().get(0).getPrecio());
-
 		// Verificar que se llama al insertar en base de datos al menos una vez
 		verify(baseDatos, atLeast(1)).insertarArticulo(any(Articulo.class));
 	}
