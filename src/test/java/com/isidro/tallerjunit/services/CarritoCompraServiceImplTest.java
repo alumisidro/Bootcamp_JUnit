@@ -146,14 +146,14 @@ public class CarritoCompraServiceImplTest {
 		// Crear artículo
 		Articulo articulo = new Articulo("Art1", 5.99);
 
-		// Cuando inserte el artículo me retornará 1
+		// Cuando inserte el artículo que me retornará ID 1
 		when(baseDatos.insertarArticulo(articulo)).thenReturn(1);
 
 		// Variable con el ID del artículo
-		Integer idEnCarrito = carritoService.insertar(articulo);
+		Integer idArticulo = carritoService.insertar(articulo);
 
 		// Comprobar que el ID en el carrito es 1
-		assertEquals(Integer.valueOf(1), idEnCarrito);
+		assertEquals(Integer.valueOf(1), idArticulo);
 
 		// Comprobar que el nombre y precio del artículo coincide con el del test
 		assertEquals("Art1", carritoService.getArticulos().get(0).getNombre());
